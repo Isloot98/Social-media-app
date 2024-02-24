@@ -1,0 +1,37 @@
+.categoriesContainer {
+  padding: 20px;
+}
+
+.heading {
+  color: #fff;
+  text-align: center;
+}
+
+.categoryList {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.categoryItem {
+  list-style-type: none;
+  margin: 6px;
+  transition: 0.3s all ease;
+  padding: 5px;
+  text-align: center;
+}
+
+.categoryLink {
+  color: #03e9f4;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  text-decoration: none;
+  position: relative;
+  transition: 0.5s all ease;
+  font-weight: 500;
+}
+
+.categoryLink:hover {
+  color: #03e9f4;
+}
