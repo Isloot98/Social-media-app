@@ -1,6 +1,8 @@
 export const fetchPosts = async () => {
   try {
-    const response = await fetch("http://localhost:3000/get-all-posts");
+    const response = await fetch(
+      "https://social-media-app-server-1iwz.onrender.com/get-all-posts"
+    );
     const postsData = await response.json();
     return postsData;
   } catch (err) {
@@ -11,7 +13,7 @@ export const fetchPosts = async () => {
 export const fetchPostsByCategory = async (categoryName) => {
   try {
     const response = await fetch(
-      `http://localhost:3000/get-posts-by-category/${categoryName}`
+      `https://social-media-app-server-1iwz.onrender.com/get-posts-by-category/${categoryName}`
     );
     const postsData = await response.json();
     return postsData;

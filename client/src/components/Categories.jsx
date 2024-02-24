@@ -9,7 +9,7 @@ const Categories = () => {
     const getCategories = async () => {
       try {
         const response = await fetch(
-          "http://localhost:3000/get-all-categories"
+          "https://social-media-app-server-1iwz.onrender.com/get-all-categories"
         );
         const categoryData = await response.json();
         setCategories(categoryData);

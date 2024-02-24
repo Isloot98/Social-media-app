@@ -11,7 +11,9 @@ const CreatePostForm = ({ updatePosts }) => {
 
   const searchForGif = async (mediaInput) => {
     const response = await fetch(
-      `http://localhost:3000/search?query=${encodeURIComponent(mediaInput)}`
+      `https://social-media-app-server-1iwz.onrender.com/search?query=${encodeURIComponent(
+        mediaInput
+      )}`
     );
     if (response.ok) {
       const data = await response.json();
@@ -24,19 +26,22 @@ const CreatePostForm = ({ updatePosts }) => {
 
   const submitPost = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/add`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          username: username,
-          title: title,
-          textcontent: textcontent,
-          media: media,
-          categoryid: categoryid,
-        }),
-      });
+      const response = await fetch(
+        `https://social-media-app-server-1iwz.onrender.com/add`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username: username,
+            title: title,
+            textcontent: textcontent,
+            media: media,
+            categoryid: categoryid,
+          }),
+        }
+      );
       if (response.ok) {
         const commentData = await response.json();
         setUsername("");

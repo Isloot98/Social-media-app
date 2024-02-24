@@ -14,7 +14,9 @@ const Gaming = () => {
 
   const searchForGif = async (mediaInput) => {
     const response = await fetch(
-      `http://localhost:3000/search?query=${encodeURIComponent(mediaInput)}`
+      `https://social-media-app-server-1iwz.onrender.com/search?query=${encodeURIComponent(
+        mediaInput
+      )}`
     );
     if (response.ok) {
       const data = await response.json();
@@ -28,7 +30,7 @@ const Gaming = () => {
   const getPostsByCategory = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3000/get-posts-by-category/Gaming`
+        `https://social-media-app-server-1iwz.onrender.com/get-posts-by-category/Gaming`
       );
       if (response.ok) {
         const postsData = await response.json();
@@ -48,18 +50,21 @@ const Gaming = () => {
 
   const submitComment = async (postid) => {
     try {
-      const response = await fetch(`http://localhost:3000/add-comment`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          postid: postid,
-          commentusername: username,
-          commenttextcontent: commentContent,
-          commentmedia: commentmedia,
-        }),
-      });
+      const response = await fetch(
+        `https://social-media-app-server-1iwz.onrender.com/add-comment`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            postid: postid,
+            commentusername: username,
+            commenttextcontent: commentContent,
+            commentmedia: commentmedia,
+          }),
+        }
+      );
       if (response.ok) {
         const commentData = await response.json();
         const updatedPosts = await fetchPosts();
